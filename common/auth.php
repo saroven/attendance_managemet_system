@@ -15,7 +15,6 @@
 		$result = mysqli_query($conn, $sql);
 
 		if($result){
-
 			if(mysqli_num_rows($result) > 0){
 
 				$user = mysqli_fetch_array($result);
@@ -32,7 +31,6 @@
 						# Trainer
 						$url = $base_url."/trainer/home.php";
 						break;
-
 					case '3':
 						# Student
 						$url = $base_url."/student/home.php";

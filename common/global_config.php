@@ -1,6 +1,6 @@
 <?php
 	
-	$base_url = "http://localhost:8001";
+	$base_url = "http://localhost:8000";
 
 	$db_host = "localhost";
 	$db_user = "root";
@@ -10,7 +10,7 @@
 	$photo_upload_dir = "uploads/users/photos/";
 
 	function goToError($url){
-		$url = $base_url."/common/403.php";
+//		$url = $base_url."/common/403.php";
     	echo "<script> location.href='".$url."'; </script>";
 	}
 
