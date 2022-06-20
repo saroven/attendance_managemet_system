@@ -2,31 +2,10 @@
   session_start();
   include "common/global_config.php";
 
-
   if(isset($_SESSION['user']) && $_SESSION['user'] != ""){
-    
-    switch ($_SESSION['user']['role_id']) {
-      case '1':
-        # Management
-        $url = $base_url."/management/home.php";
-        break;
 
-      case '2':
-        # Trainer
-        $url = $base_url."/trainer/home.php";
-        break;
-
-      case '3':
-        # Student
-        $url = $base_url."/student/home.php";
-        break;
-      
-      default:
-        $url = $base_url;
-        break;
-    }
-
-    goToError($url);
+      //this function will navigate user to their dashboard
+      navigateUser();
 
   }
 ?>
