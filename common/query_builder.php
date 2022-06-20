@@ -3,11 +3,7 @@
 	function conditionDefine($element){
 
 		switch ($element["condition"]) {
-			case 'equal':
-					$text = $element["field_name"].' = "'.$element["field_value"].'"';
-				break;
-
-			case 'not_equal':
+            case 'not_equal':
 					$text = $element["field_name"].' != "'.$element["field_value"].'"';
 				break;
 			

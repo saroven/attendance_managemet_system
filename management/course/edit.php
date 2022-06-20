@@ -48,9 +48,7 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Description*</label>
-                  <textarea class="form-control" name="description" required="required">
-                    <?php echo $course['description']; ?>
-                  </textarea>
+                  <textarea class="form-control" name="description" required="required"><?php echo $course['description']; ?></textarea>
                 </div>
                 <div class="form-group">
                   <label for="email">Number of class*</label>
