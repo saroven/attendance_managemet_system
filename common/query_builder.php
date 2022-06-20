@@ -2,15 +2,10 @@
 	// a small function for defineing sql conditions
 	function conditionDefine($element){
 
-		switch ($element["condition"]) {
-            case 'not_equal':
-					$text = $element["field_name"].' != "'.$element["field_value"].'"';
-				break;
-			
-			default:
-					$text = $element["field_name"].' = "'.$element["field_value"].'"';
-				break;
-		}
+        $text = match ($element["condition"]) {
+            'not_equal' => $element["field_name"] . ' != "' . $element["field_value"] . '"',
+            default => $element["field_name"] . ' = "' . $element["field_value"] . '"',
+        };
 
 		return $text;
 	}
@@ -273,7 +268,7 @@ function selectSingleTableWithThreeCondition($conn, $table_name, $condition_one,
 	function selectCourseList($conn, $table_name, $get_data = null){
 
 		if (empty($get_data)) {
-			
+
 			$sql = "SELECT * FROM $table_name";
 
 		}else{
@@ -298,7 +293,7 @@ function selectSingleTableWithThreeCondition($conn, $table_name, $condition_one,
 				$conditions[] = 'duration = '.$get_data['duration'];
 			}
 
-			for ($i=0; $i < count($conditions); $i++) { 
+			for ($i=0; $i < count($conditions); $i++) {
 				if($i == 0){
 					$keyword = "WHERE";
 				}else{
@@ -308,7 +303,7 @@ function selectSingleTableWithThreeCondition($conn, $table_name, $condition_one,
 				$sql = $sql.' '.$keyword.' '.$conditions[$i];
 
 			}
-			
+
 		}
 
 		return $result = mysqli_query($conn, $sql);
